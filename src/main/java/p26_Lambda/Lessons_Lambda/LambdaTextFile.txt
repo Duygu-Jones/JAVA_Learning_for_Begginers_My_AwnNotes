@@ -1,0 +1,28 @@
+
+stream() methodu list'i "stream" e cevirir, Stream bir veri yapısı değildir ve bellekte yer tutmaz.
+       Sadece, var olan veri yapılarını girdi olarak alır ve girdilerin veri yapısını değiştirmeden işler.
+       Verilerin sıralı işlemlerden (pipeline) geçirilerek işlenmesini ve istenilen sonuçların elde edilmesini sağlar.
+
+filter: Bir koleksiyon üzerinde belirli bir koşula uyan öğeleri filtreler.
+        bu method ile sadece koşulu sağlayan öğeler akista yoluna devam edebilirler.
+
+map: Bir koleksiyonun her bir öğesinin başka bir değere dönüştürülmesi gerektiginde kullanilir.
+        bu method ile her bir öğe üzerinde güncelleme yapilabilir
+
+sorted: Bir koleksiyonu belirli bir sıralama kriterine göre sıralar.
+       Öğelerin doğru bir sıralama düzenine yerleştirilmesini sağlar.
+
+distinct: Koleksiyonda bulunan tekrarlayan öğeleri kaldırır.        Yalnızca benzersiz öğeler kalir.
+      Note : Distinct methodu ilk baslara konulursa "Lambda" ya daha az is yaptirmis oluruz.
+
+reduce: Bir koleksiyonun öğeleri üzerinden max, min, toplam, carpim vb.. gibi bir sonuc gerektigi zaman
+      coklu datanin tek bir degere indirgenecegi zaman kullanilir    İndirgeme (reduction)
+      "reduce()" u  kullanildiginda cok sayidaki deger bir tane deg ere donusmus olur.
+       Orn; reduce(0,(t,u)->t+u) ==> "t" ilk degeri "sifir" dan alir, daha sonraki
+       degerleri toplamanin sonucundan alir.
+       "u" ise degerlerini her zaman "stream" den alir.
+
+forEach: Bir koleksiyondaki her bir öğe için belirli bir işlemi gerçekleştirir.
+       Herbir öğenin üzerinde döngü oluşturmadan doğrudan işlem yapılmasını sağlar.
+
+get() methodu "optional data type"ini "Integer"a cevirir.

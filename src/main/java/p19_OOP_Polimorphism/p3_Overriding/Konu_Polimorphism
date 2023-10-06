@@ -1,0 +1,63 @@
+//Overriding -->(gecersiz kilmak demek)
+    //child classda ayni ozelligin(eat, drink...) child classa(Cat) ozel ozellistirmesidir
+    //yani buradaki child classlar icin olusturulan ortak ozellikgi, o chil class icerisnde gecersiz kildik
+
+    //NOTES- Hoca
+
+    // Overriding
+    /*
+    1) Parent class daki methodu child class icinde ozellestirerek kullanmaya overriding yapmak denir
+    2) Overriding de methodun parantezine, methodun ismine dokunulmaz, yani methodun signature i degistirilmez
+       methodun body si degistirilir
+    3) Child class taki override eden eat() methoduna Overriding Method denir
+       Parent calss taki override edilmis eat() methoduna Overriden Method denir
+    4) private methodlar override edilemezler
+    5) Child class daki methodun access modifieri parent class daki override edilmis (overriden) methodun
+    access modifier indan dar olamaz. Aynisi olabilir, yada daha genis olabilir
+
+    Overriden Method ==> protected -- Overriding Method ==> protected + public
+    Overriden Method ==> default   -- Overriding Method ==> default + protected + public
+    Overriden Method ==> private   -- Overriding Method ==> override olmazki access modifieri olsun
+    (bakiniz 4.madde)
+
+    6) Child class da override edilen methodun return type ile Parent class taki methodun return type i arasinda
+    IS-A iliskisi varsa return type degistirilebilir
+
+    7) Methodun return typei primitive ise Overriding yaparken return type degistirilemez. Cunku return type ya ayni olur
+    veya parent tan secilir ama primitiveler arasinda parent - child iliskisi olmadigindan parent tan secmek
+    soz konusu olamaz ve geriye tek secenek kalir oda ayni olmak
+
+    8) Child da override edilen methodun return tyepi ile parent taki methodun return type i arasinda IS-A iliskisi
+    yoksa return type   java bir wrapper classi digerinin childi yapmadigindan wrapper classlarda return type degistirilemez
+    mesela; Integer wrapper class ile Long wrapper class arasinda IS-A iliskisi olmadigindan return type Integer oldugunda Long olarak degistirilemez
+
+    9) Methodun return type i void ise Overriding yaparken type degistirilemez
+    yani void ise yine void olarak kalmak zorundadir. Void bir aile ye ait bile degildir yani parent child iliskisine hic sahip degildir, oksuz isci, iscisin sen iski kal:)
+
+   10) static methodlar override edilemezler, Cunku static methodlar tum childlar icin ortak methodlardir
+    Bir child bir ortak methodu degistirdiginde diger child lar bundan olumsuz etkilenebilir, bu nedenle
+    java static methodlarin override edilmesine musaade etmez
+
+    11) final methodlar override edilemezler, final methodlarin body si degistirilemez ama override amaci
+    method body i degistirmek ve child classa uyarlanir, bu bir celiski oldugundan java final methodlarin override edilmesine musaade etmez
+
+    Final keyword ozellileri;
+           a) final keywordunu variable lar ile kullanabilirsiniz
+                i) final variabllarda mutlaka deger atanmalidir (bu initialize etmek demektir calistirmak)
+                ii) ilk atanan deger degistirilemez, final karar verilmis son degerdir zaten degisim hic bir yerde soz konusu degil
+
+           b)  final keywordunu Method lar ile kullanabilirsiniz
+                i) method final ise methodun body si degistirilemez
+                ii) method bodys degistirelemeyince override yapmak mumkün olmaz
+
+           c)   final keywordunu class lar ile kullanabilirsiniz
+                i) class final ise o classin childi olamaz ===> yani classi kisirlastirmis olursunuz / son class demek
+
+     12) Polymorphism (cok sekillilik) = Method Overriding + Method Overloading
+
+     (overloading : birden fazla methodun ozelliginin bir methoda yuklenmesi multitasking idi)
+     (Overriding : parent classdaki methodun chil class da kullanilmasi tekrarlanmasi ve belli kurallar cercevesinde child classin ozelliklerine uydurulmasi)
+
+    Polymorphism karsimiza overloading ve overriding birlikte kullanimi seklinde karsimiza cikabilir
+
+     */

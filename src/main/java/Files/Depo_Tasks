@@ -1,0 +1,97 @@
+/*
+     * basit bir depo projesi
+     *
+     * Calisan bir fabrikada uygulanan bir sistem olan depo uygulamasidir.
+     *
+     * 1-) burada oncelikle urunun tanimlamasi  yapilir. id urunIsmi uretici miktar birim ve raf (6 adet fields mevcut)
+     *
+     * 2-) methodlar olusturacagiz.
+     *      urunTanimlama   ==>  urunun ismi, ureticisi ve birimi girilecek. id  alınacak.
+     *
+     *      urunListele     ==> tanimlanan urunler listelenecek. urunun adeti ve raf numarasi tanimlama yapilmadiysa default deger gorunsun.
+     *
+     *      urunGirisi      ==> giris yapmak istedigimiz urnunun id numarasi ile girecegiz.
+     *
+     *      urunuRafaKoy    ==> listeden urunu sececegiz ve id numarasina gore urunu rafa koyacagiz.
+     *
+     *      urunCikisi      ==> listeden urunu sececegiz ve urunun cikis yapcagiz. burada urun listesinden sadece miktarda degisiklik yapilacak.
+     *                          urun adedi 0dan az olamaz. 0 olunca urun tanimlamasi silinmesin. sadece miktari 0 olsun.
+     *      ===> yaptigimiz tum degisiklikler listede de gorunsun.
+     *
+     *
+     *          id      ismi    ureticisi   miktari     birimi      raf
+     *      ---------------------------------------------------------------
+     *      or: 1000     un     hekimoglu   0           cuval       null
+     *
+     *      urunGirisi      ==> id:1000  urun girisi :5
+     *      urunListele     ==>
+     *
+     *          id      ismi    ureticisi   miktari     birimi      raf
+     *      ---------------------------------------------------------------
+     *      or: 1000     un     hekimoglu   5           cuval       null
+     *
+     *      urunuRafaKoy    ==> id:1000 raf : raf1
+     *      urunListele     ==>
+     *          id      ismi    ureticisi   miktari     birimi      raf
+     *      ---------------------------------------------------------------
+     *      or: 1000     un     hekimoglu   5           cuval       raf1
+     *
+     *      urunCikisi      ==> id 1000: urun cikis : 3 (kalan 2 cuval un)
+     *      urunListele     ==>
+     *          id      ismi    ureticisi   miktari     birimi      raf
+     *      ---------------------------------------------------------------
+     *      or: 1000     un     hekimoglu   2           cuval       raf1
+     *
+     *
+     */
+
+
+     DEPO PROJESI
+
+     1. Class (Field class)
+
+     ID: String veya int olur, ancak int olması daha iyi; otomatik ataması
+     gerek.
+     Ürün İsmi: String olacak
+     Üretici firma, marka: String
+     Miktar: Integer (Default değer=0)
+     Birim: String (çuval, koli, teneke vs.)
+     Raf: Hem rakam hem harf olabilir (String, default değer=null)
+     Bu kısımda OOP'den Encapsulation ve Polymorophism kullanılacak.
+     Constructor, getter ve setter kullanılacak.
+     Ürün çeşitliliği bize bağlı.
+
+
+     2. Class (Methodlar)
+
+     urunTanimlama urunun ismi, ureticisi ve birimi girilecek. id alınacak.
+     ( Ü r ü n burada depoya hen ü z giriş yapmadı.)
+     urunListele Tanimlanan urunler listelenecek.
+     Miktar default değer=0
+     Raf default değer=null
+     (PrintF kullanılacak, tablo gibi gözükecek bu kısım)
+     urunGirisi Ürünün depoya giriş yaptığı nokta. ID'sini gireceğiz.
+     urunuRafaKoy Listeden urunu sececegiz ve id numarasina gore urunu
+     rafa koyacagiz. ( Ü r ü n ü bir raftan alıp diğerine koyabilmeliyiz.)
+     urunCikisi İstenen ürünü seçeceğiz ve ürünün çıkışını ID no ile
+     yapacağız. Sadece miktarda değişiklik olacak. ( Ç ıkış yaparken stok 0'da
+     k üçü k olamaz, stoktan fazla ü r ü n ç ıkışı yapılamaz.)
+
+
+     3. Runner Class
+
+     Çalışacak olan ana class.
+     İstenenler
+     1. Map kullanılacak.
+     2. Exceptionlar kullanılacak. Hata verebilecek senaryoların hepsi
+     exceptionlarda çözülmeli.
+     3. En az 3 Class olmalı. (Fields, methods, runner)
+     4. OOP'nin 3 temel prensibi kesinlikle kullanılmalı;
+     Inheritance, Polymorphism, Encapsulation
+     (Abstraction zorunlu değil.)
+
+     TESLİM TARİHİ
+     25 EYL Ü L 2023 PAZARTESİ SAAT 19:00
+     Gruptan sözcü ile sunulacak.
+
+
